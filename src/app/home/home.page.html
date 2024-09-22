@@ -3,15 +3,31 @@
     <ion-title>
       Raissa's Simple Map
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-select interface="popover" [(ngModel)]="selectedBasemap" (ionChange)="changeBasemap()" placeholder="Basemap"
+        style="margin-right: 40px;"> <!-- Margin kiri -->
+
+        <ion-select-option value="terrain">Terrain</ion-select-option>
+        <ion-select-option value="osm">Open Street Map</ion-select-option>
+        <ion-select-option value="topo">Topographic</ion-select-option>
+        <ion-select-option value="dark-gray">Dark Grey</ion-select-option>
+        <ion-select-option value="gray">Light Grey</ion-select-option>
+        <ion-select-option value="hybrid">Hybrid</ion-select-option>
+        <ion-select-option value="satellite">Satellite</ion-select-option>
+        <ion-select-option value="streets">Streets</ion-select-option>
+
+      </ion-select>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Raissa Simple Map</ion-title>
+      <ion-title size="large">Raissa's Simple Map</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container"></div>
+  <!-- Kontainer untuk peta -->
+  <div id="container" style="height: 100%;"></div>
 </ion-content>
